@@ -1,0 +1,42 @@
+{
+  "name": "escape-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "ansi-escapes": "^3.2.0",
+    "ansi-styles": "^3.2.1",
+    "base64-js": "^1.3.0",
+    "local-echo": "github:wavesoft/local-echo",
+    "node-webcrypto-ossl": "^1.0.42",
+    "ora": "^3.2.0",
+    "scrypt-js": "^2.0.4",
+    "webcrypto-liner": "^0.1.38",
+    "xterm": "^3.12.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/preset-env": "^7.3.1",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.1",
+    "gulp": "^4.0.0",
+    "gulp-decompress": "^2.0.2",
+    "gulp-download2": "^1.0.2",
+    "gulp-filter": "^5.1.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-s3-upload": "^1.7.3",
+    "html-webpack-plugin": "^3.2.0",
+    "readline-promise": "^1.0.4",
+    "string-replace-loader": "^2.1.1",
+    "style-loader": "^0.23.1",
+    "unzip": "^0.1.11",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3",
+    "webpack-stream": "^5.2.1"
+  }
+}
