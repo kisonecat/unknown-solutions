@@ -58578,7 +58578,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     for (;;) {
       term.write("\r\n");
       let decoder = new TextDecoder('ascii');
-      term.write(decoder.decode(base64_js__WEBPACK_IMPORTED_MODULE_15__["toByteArray"](puzzle.text)));
+      term.write(decoder.decode(base64_js__WEBPACK_IMPORTED_MODULE_15__["toByteArray"](puzzle.text)).replace("\n", "\r\n"));
       term.write("\r\n");
 
       if (puzzle.keys === undefined) {
