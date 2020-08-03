@@ -32,5 +32,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [new HtmlWebpackPlugin()]
+  plugins: [new HtmlWebpackPlugin({title:"unknown.solutions"})]
 };

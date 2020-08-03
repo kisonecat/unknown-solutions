@@ -1,12 +1,13 @@
 {
-  "name": "escape-website",
+  "name": "unknown-solutions",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "description": "Solve a series of puzzles",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --config webpack.config.js"
   },
-  "author": "",
+  "author": "Jim Fowler <kisonecat@gmail.com>",
   "license": "GPL-3.0-or-later",
   "dependencies": {
     "ansi-escapes": "^3.2.0",

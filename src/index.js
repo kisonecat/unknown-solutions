@@ -100,6 +100,25 @@ async function unlockPuzzle( puzzle, response, stdout ) {
   return puzzle;
 }
 
+function printTheBanner(term) {
+  if (term.cols <= Math.max( ... banner.map( line => line.length ))) {
+    term.write("UNKNOWN SOLUTIONS");
+    term.write( "\r\n" );    
+  } else {
+    banner.forEach( function(line) {
+      term.write(line);
+      term.write( "\r\n" );    
+    });
+  }  
+}
+
+function printHelp(term) {
+  term.write("\r\n");  
+  term.write("For more information, visit \r\n");
+  term.write("\r\n");
+  term.write("  https://github.com/kisonecat/unknown-solutions\r\n")
+  term.write("\r\n");  
+}
 
 document.addEventListener("DOMContentLoaded", function(event) {
   Terminal.applyAddon(fullscreen);
@@ -115,11 +134,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   term.toggleFullScreen();
   term.focus();
 
-  banner.forEach( function(line) {
-    term.write(line);
-    term.write( "\r\n" );    
-  });
-                                               
+  printTheBanner(term);
+                                                 
   const localEcho = new LocalEchoController(term);
 
   let stdout = {
@@ -159,11 +175,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
       } else {
         let response = await localEcho.read("\u203a ");
         if (response.length > 0) {
-          try {
-            puzzle = await unlockPuzzle( puzzle, response, stdout );
-          } catch (err) {
-            console.log("Generic error");
-            console.error(err);
+          if ((normalizeAnswer(response) == "HELP") || (normalizeAnswer(response) == "HINT")) {
+            printHelp(term);
+          } else {
+            try {
+              puzzle = await unlockPuzzle( puzzle, response, stdout );
+            } catch (err) {
+              console.log("Generic error");
+              console.error(err);
+            }
           }
         }
       }
